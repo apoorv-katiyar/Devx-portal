@@ -1,18 +1,24 @@
 app:
-  title: Scaffolded Backstage App
+  title: DevX Portal
   baseUrl: http://localhost:3000
 
   # Enable all packages by default, this will discover packages from packages/app/package.json
   packages: all
 
   extensions:
-    # Configure the catalog index page to be the root page, this is normally mounted on /catalog
-    - page:catalog:
+    # Mount the DevX home dashboard at the root path; the catalog stays at its default /catalog
+    - page:home:
         config:
           path: /
+    # Built-in home widgets we don't want on the DevX dashboard — replaced by our
+    # own Welcome and Quick Links widgets (see packages/app/src/modules/home)
+    - home-page-widget:home/toolkit:
+        disabled: true
+    - home-page-widget:home/random-joke:
+        disabled: true
 
 organization:
-  name: My Company
+  name: DevX
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -86,8 +92,6 @@ auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   environment: development
   providers:
-    # See https://backstage.io/docs/auth/guest/provider
-    guest: {}
     # See https://backstage.io/docs/auth/github/provider
     github:
       development:

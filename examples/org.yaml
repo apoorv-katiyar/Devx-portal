@@ -1,12 +1,4 @@
 ---
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: guest
-spec:
-  memberOf: [guests]
----
 # GitHub sign-in resolves to this entity via usernameMatchingUserEntityName,
 # matching the GitHub login "apoorv-katiyar" to user:default/apoorv-katiyar.
 apiVersion: backstage.io/v1alpha1
@@ -14,13 +6,14 @@ kind: User
 metadata:
   name: apoorv-katiyar
 spec:
-  memberOf: [guests]
+  memberOf: [platform-team]
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: guests
+  name: platform-team
+  description: Owns the DevX internal developer platform
 spec:
   type: team
   children: []
