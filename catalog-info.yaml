@@ -2,12 +2,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: devx-portal
-  description: An example of a Backstage application.
-  # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  description: Internal Developer Platform built on Backstage, self-registered in its own catalog.
+  annotations:
+    github.com/project-slug: apoorv-katiyar/Devx-portal
+    # backstage.io/techdocs-ref: dir:. # enabled in Phase 8
 spec:
   type: website
-  owner: john@example.com
-  lifecycle: experimental
+  owner: user:default/apoorv-katiyar
+  lifecycle: development
